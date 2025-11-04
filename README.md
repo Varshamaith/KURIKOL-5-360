@@ -39,11 +39,11 @@ It focuses on:
 </p>
 
 <p align="center">
-  Varshamai T H<br>
-  Dharshini P<br>
   Bargavi G<br>
+  Dharshini P<br>
+  Iyyapan R<br>
   Karthikeyan V<br>
-  Iyyapan R
+  Varshamai T H
 </p>
 
 ---
