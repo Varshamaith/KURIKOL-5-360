@@ -1,4 +1,4 @@
-# KURIKOL-5-360  
+# 🏆KURIKOL-5-360  
 
 **KURIKOL-5:360** is a passionate hackathon team that participated in the **Design Spark Challenge 2025**,  
 organized by **School of Design Thinking**, **Academia NXT**, **Intellect Design Arena**, and **NASSCOM**.  
@@ -6,10 +6,10 @@ organized by **School of Design Thinking**, **Academia NXT**, **Intellect Design
 ---
 
 ### 💡 About the Hackathon  
-- ⏱️ A **50-hour sleepless hackathon** that tested innovation, design, and collaboration.  
-- 🌱 We developed **AgriConnect** — a digital platform empowering farmers through technology.  
-- 🏆 **Secured 2nd Runner-Up** position with a **cash prize of ₹40,000**.  
-- 💻 A team of **creative innovators** driven by passion and purpose for agricultural impact.  
+- A **50-hour sleepless hackathon** that tested innovation, design, and collaboration.  
+- We developed **AgriConnect** — a digital platform empowering farmers through technology.  
+- **Secured 2nd Runner-Up** position with a **cash prize of ₹40,000**.  
+- A team of **creative innovators** driven by passion and purpose for agricultural impact.  
 
 ---
 
