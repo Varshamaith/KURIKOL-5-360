@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>AgriConnect Dashboard</h1>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <!-- Toggle Button for Sidebar -->
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">×</a>
+        <a href="market.html">Market a Product</a>
+        <a href="schemes.html">Government Schemes</a>
+        <a href="loans.html">Loan Options</a>
+        <a href="community.html">Farmers Community</a>
+        <a href="farm_details.html">Farm Details</a>
+    </div>
+
+    <!-- User Details -->
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="farmerName"></span>!</h2>
+        <div class="user-details">
+            <p><strong>Email:</strong> <span id="farmerEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="farmerPhone"></span></p>
+            <p><strong>Age:</strong> <span id="farmerAge"></span></p>
+            <p><strong>Address:</strong> <span id="farmerAddress"></span></p>
+            <p><strong>Land Type:</strong> <span id="farmerLand"></span></p>
+            <p><strong>Gender:</strong> <span id="farmerGender"></span></p>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

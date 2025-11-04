@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="customer_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, <span id="customerName"></span></h2>
+        <p>Email: <span id="customerEmail"></span></p>
+        <p>Phone: <span id="customerPhone"></span></p>
+        <p>Age: <span id="customerAge"></span></p>
+        <p>Address: <span id="customerAddress"></span></p>
+        <p>Gender: <span id="customerGender"></span></p>
+    </div>
+
+    <script>
+        const customer = JSON.parse(localStorage.getItem("customer"));
+        if (!customer) window.location.href = "customer_login.html";
+
+        document.getElementById("customerName").innerText = customer.name;
+        document.getElementById("customerEmail").innerText = customer.email;
+        document.getElementById("customerPhone").innerText = customer.phone;
+        document.getElementById("customerAge").innerText = customer.age;
+        document.getElementById("customerAddress").innerText = customer.address;
+        document.getElementById("customerGender").innerText = customer.gender;
+    </script>
+</body>
+</html>

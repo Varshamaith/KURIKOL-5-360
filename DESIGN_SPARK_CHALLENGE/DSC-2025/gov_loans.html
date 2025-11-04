@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Loan Schemes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f9f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+        }
+        .scheme-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4caf50;
+            color: white;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+            width: 100%;
+        }
+        .scheme-btn:hover {
+            background-color: #388e3c;
+        }
+        .details {
+            display: none;
+            background-color: #e8f5e9;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #388e3c;
+            padding: 10px;
+            text-align: left;
+        }
+        .apply-btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .apply-btn:hover {
+            background-color: #e68900;
+        }
+        /* Pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌱 Farmer Loan Schemes</h2>
+        <button class="scheme-btn" onclick="showDetails(0)">🌿 PM-KISAN</button>
+        <button class="scheme-btn" onclick="showDetails(1)">🌾 PMFBY</button>
+        <button class="scheme-btn" onclick="showDetails(2)">🚜 Crop Insurance</button>
+        <button class="scheme-btn" onclick="showDetails(3)">🏡 Rural Housing Loan</button>
+        <button class="scheme-btn" onclick="showDetails(4)">💧 Irrigation Loan</button>
+        <button class="scheme-btn" onclick="showDetails(5)">📈 Agricultural Business Loan</button>
+        <button class="scheme-btn" onclick="showDetails(6)">🌻 Organic Farming Subsidy</button>
+        <button class="scheme-btn" onclick="showDetails(7)">🛠️ Farm Machinery Loan</button>
+
+        <div id="scheme-details" class="details"></div>
+    </div>
+
+    <div id="popup" class="popup" onclick="closePopup()">New Scheme Available!</div>
+
+    <script>
+        const schemes = [
+            { name: "PM-KISAN", features: ["₹6,000/year support", "For small farmers", "Direct bank transfer"], link: "https://pmkisan.gov.in" },
+            { name: "PMFBY", features: ["Crop Insurance", "Low premium", "Govt subsidy"], link: "https://pmfby.gov.in" },
+            { name: "Crop Insurance", features: ["Protection from losses", "Cover for natural calamities", "Flexible plans"], link: "https://agriinsurance.gov.in" },
+            { name: "Rural Housing Loan", features: ["Low-interest rate", "Govt subsidy available", "Easy approval"], link: "https://pmaymis.gov.in" },
+            { name: "Irrigation Loan", features: ["Subsidized loans", "Drip irrigation focus", "Low collateral"], link: "https://pmksy.gov.in" },
+            { name: "Agricultural Business Loan", features: ["For agri startups", "Govt. backed schemes", "Easy repayment"], link: "https://mudra.org.in" },
+            { name: "Organic Farming Subsidy", features: ["For organic farmers", "Up to 50% subsidy", "Govt certification support"], link: "https://ncof.dacnet.nic.in" },
+            { name: "Farm Machinery Loan", features: ["Low interest", "Up to ₹10 lakh loan", "For tractors, tools"], link: "https://nabard.org" }
+        ];
+
+        function showDetails(index) {
+            const scheme = schemes[index];
+            let detailsHtml = `<h3>${scheme.name}</h3>
+                <table>
+                    <tr><td>Feature 1</td><td>${scheme.features[0]}</td></tr>
+                    <tr><td>Feature 2</td><td>${scheme.features[1]}</td></tr>
+                    <tr><td>Feature 3</td><td>${scheme.features[2]}</td></tr>
+                </table>
+                <button class="apply-btn" onclick="window.open('${scheme.link}', '_blank')">Apply Now</button>`;
+            document.getElementById("scheme-details").innerHTML = detailsHtml;
+            document.getElementById("scheme-details").style.display = "block";
+        }
+
+        function showPopup() {
+            const randomIndex = Math.floor(Math.random() * schemes.length);
+            document.getElementById("popup").innerHTML = schemes[randomIndex].name;
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        setInterval(showPopup, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* Background with Nature Image */
+body {
+    font-family: Arial, sans-serif;
+    background: url('nature.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between items */
+    padding: 20px;
+    background-color: white; /* Pure white background */
+    border-bottom: 5px solid green; /* Green bottom border */
+    position: relative;
+}
+
+.team-logo {
+    width: 180px; /* Adjust as needed */
+    height: auto;
+}
+
+.college-logo {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+}
+
+.center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px; /* Adjust as needed */
+    height: auto;
+}
+
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px; /* Space between logo and text */
+}
+
+/* Title Styling */
+.title h1 {
+    font-size: 22px;
+    margin: 5px 0;
+}
+
+.title p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Login Form Styling */
+.login-container {
+    width: 300px; /* Smaller login box */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+/* Input Fields */
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Link Styling */
+a {
+    color: red;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* this is for profile page
+/* General Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+} */
+
+/* Navigation Bar */
+.navbar {
+    background: #222;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    margin-left: 20px;
+}
+
+.navbar button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.navbar button:hover {
+    background-color: darkred;
+}
+
+/* User Details */
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+/* Sidebar Menu */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Toggle Button */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-btn:hover {
+    background: #444;
+}
+
+

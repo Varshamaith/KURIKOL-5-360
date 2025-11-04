@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #weather {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>3-Day Weather Forecast</h1>
+    <button onclick="fetchWeather()">Get Weather</button>
+    <p id="weather">Click the button to see the forecast.</p>
+
+    <script>
+        function fetchWeather() {
+            fetch("http://127.0.0.1:8000/weather")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.forecast) {
+                        document.getElementById("weather").innerText = "Forecast: " + data.forecast;
+                    } else {
+                        document.getElementById("weather").innerText = "Error fetching weather data.";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("weather").innerText = "Error fetching weather data.";
+                    console.error("Error:", error);
+                });
+        }
+    </script>
+
+</body>
+</html>

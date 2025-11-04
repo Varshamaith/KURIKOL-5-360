@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #chatbox {
+            width: 60%;
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .user {
+            background-color: #d1e7fd;
+            text-align: right;
+        }
+        .bot {
+            background-color: #e2f3d9;
+            text-align: left;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Agricultural Chatbot 🌿</h2>
+
+    <div id="chatbox"></div>
+
+    <input type="text" id="userMessage" placeholder="Ask about weather...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            let message = document.getElementById("userMessage").value.trim();
+            if (message === "") return;  // Prevent empty messages
+            
+            let chatbox = document.getElementById("chatbox");
+
+            // Display user message
+            let userMsg = document.createElement("div");
+            userMsg.className = "message user";
+            userMsg.textContent = "You: " + message;
+            chatbox.appendChild(userMsg);
+
+            // Send request to backend
+            fetch("http://127.0.0.1:5000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMsg = document.createElement("div");
+                botMsg.className = "message bot";
+                botMsg.textContent = "Bot: " + data.reply;
+                chatbox.appendChild(botMsg);
+                chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to latest message
+            })
+            .catch(error => console.error("Error:", error));
+
+            document.getElementById("userMessage").value = ""; // Clear input field
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer & Machinery Loan Schemes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .scheme-details, .application-form {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            display: none;
+        }
+        .scheme-details h3, .application-form h3 {
+            color: #00796b;
+        }
+        button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>💰 Select a Loan Scheme for Farmers</h2>
+    
+    <label for="loanScheme"><b>Choose a scheme:</b></label>
+    <select id="loanScheme" onchange="showDetails()">
+        <option value="">-- Select a Scheme --</option>
+        <option value="pm-kisan">🌱 PM-KISAN: Farmer Income Support</option>
+        <option value="pmfby">🌾 PMFBY: Crop Insurance</option>
+        <option value="crop-insurance">🌦️ Government Crop Insurance</option>
+        <option value="tn-iamwarm">🚜 Tamil Nadu IAMWARM</option>
+        <option value="collateral-loan">🏦 Collateral-Free Agricultural Loan</option>
+        <option value="nabard-loan">🛠️ NABARD Farm Machinery Loan</option>
+        <option value="kcc">💳 Kisan Credit Card (KCC) Loan</option>
+        <option value="tractor-loan">🚜 Tractor & Equipment Loan</option>
+        <option value="green-revolution">🌍 Green Revolution Loan</option>
+    </select>
+
+    <div class="scheme-details" id="schemeDetails">
+        <h3 id="schemeTitle"></h3>
+        <p id="schemeDescription"></p>
+        <p><strong>Eligibility:</strong> <span id="schemeEligibility"></span></p>
+        <p><strong>Benefits:</strong> <span id="schemeBenefits"></span></p>
+        <p><strong>Loan Amount:</strong> <span id="schemeAmount"></span></p>
+        <button onclick="showApplicationForm()">Apply Now</button>
+    </div>
+
+    <div class="application-form" id="applicationForm">
+        <h3>Apply for Loan</h3>
+        <label for="farmerName">Full Name:</label>
+        <input type="text" id="farmerName" required>
+
+        <label for="farmerEmail">Email:</label>
+        <input type="email" id="farmerEmail" required>
+
+        <label for="farmerPhone">Phone Number:</label>
+        <input type="text" id="farmerPhone" required>
+
+        <label for="farmerLandType">Land Type:</label>
+        <select id="farmerLandType">
+            <option value="Irrigated">Irrigated</option>
+            <option value="Rainfed">Rainfed</option>
+            <option value="Horticulture">Horticulture</option>
+        </select>
+
+        <label for="cibilScore">CIBIL Score:</label>
+        <input type="number" id="cibilScore" placeholder="Enter your CIBIL score" min="300" max="900" required>
+
+        <label for="emiPercentage">EMI Percentage:</label>
+        <select id="emiPercentage">
+            <option value="5">5% per annum</option>
+            <option value="7.5">7.5% per annum</option>
+            <option value="10">10% per annum</option>
+            <option value="12.5">12.5% per annum</option>
+            <option value="15">15% per annum</option>
+        </select>
+
+        <button onclick="submitApplication()">Submit Application</button>
+    </div>
+</div>
+
+<script>
+    let selectedScheme = "";
+
+    function showDetails() {
+        let schemeInfo = {
+            "pm-kisan": { title: "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)", description: "A government scheme providing direct income support to farmers.", eligibility: "All small and marginal farmers across India.", benefits: "₹6,000 per year in 3 equal installments.", amount: "Fixed ₹6,000 per year." },
+            "pmfby": { title: "Pradhan Mantri Fasal Bima Yojana (PMFBY)", description: "Crop insurance to protect farmers against natural calamities and pests.", eligibility: "Farmers growing notified crops and enrolled before the deadline.", benefits: "Covers financial losses due to crop damage.", amount: "Up to ₹2 lakh based on crop and area." },
+            "crop-insurance": { title: "Crop Insurance Scheme", description: "Various insurance plans covering agricultural crop losses.", eligibility: "Farmers with registered landholding and crops.", benefits: "Financial support during floods, droughts, and pest attacks.", amount: "Compensation based on loss assessment." }
+        };
+
+        selectedScheme = document.getElementById("loanScheme").value;
+        let detailsDiv = document.getElementById("schemeDetails");
+
+        if (selectedScheme && schemeInfo[selectedScheme]) {
+            document.getElementById("schemeTitle").innerText = schemeInfo[selectedScheme].title;
+            document.getElementById("schemeDescription").innerText = schemeInfo[selectedScheme].description;
+            document.getElementById("schemeEligibility").innerText = schemeInfo[selectedScheme].eligibility;
+            document.getElementById("schemeBenefits").innerText = schemeInfo[selectedScheme].benefits;
+            document.getElementById("schemeAmount").innerText = schemeInfo[selectedScheme].amount;
+            detailsDiv.style.display = "block";
+        } else {
+            detailsDiv.style.display = "none";
+        }
+    }
+
+    function showApplicationForm() {
+        document.getElementById("applicationForm").style.display = "block";
+    }
+
+    function submitApplication() {
+    let applicationData = {
+        name: document.getElementById("farmerName").value,
+        email: document.getElementById("farmerEmail").value,
+        phone: document.getElementById("farmerPhone").value,
+        landType: document.getElementById("farmerLandType").value,
+        loanScheme: selectedScheme,
+        cibilScore: document.getElementById("cibilScore").value,
+        emiPercentage: document.getElementById("emiPercentage").value
+    };
+
+    console.log("Submitting:", applicationData); // Debugging
+
+    fetch("http://localhost:3000/apply-loan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(applicationData)
+    })
+    .then(response => {
+        console.log("Response:", response);
+        return response.json();
+    })
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error("Fetch Error:", error);
+        alert("Error submitting application.");
+    });
+}
+
+
+</script>
+
+</body>
+</html>

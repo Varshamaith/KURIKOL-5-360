@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="customer_style.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Customer Registration</h2>
+
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <input type="text" id="phone" placeholder="Enter Phone Number" required>
+        <input type="number" id="age" placeholder="Enter Age" required>
+        <input type="text" id="address" placeholder="Enter Address" required>
+        <input type="text" id="gender" placeholder="Enter Gender" required>
+        <input type="text" id="native" placeholder="Enter Native" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <button onclick="register()">Register</button>
+        <p id="message"></p>
+        <p>Already have an account? <a href="customer_login.html">Login</a></p>
+
+    </div>
+
+    <script src="customer_script.js"></script>
+</body>
+</html>
