@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="67aa2c4d-a017-4e2b-9005-f383e2059a39.png" alt="AgriConnect Logo" width="500">
-</p>
-
-# 🌾 KURIKOL-5-360  
+# KURIKOL-5-360  
 
 **KURIKOL-5:360** is a passionate hackathon team that participated in the **Design Spark Challenge 2025**,  
 organized by **School of Design Thinking**, **Academia NXT**, **Intellect Design Arena**, and **NASSCOM**.  
